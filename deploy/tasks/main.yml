@@ -1,0 +1,6 @@
+- name: copy the package to tomcat
+  copy:    
+      src: /home/devops/sonard.war
+      dest: /opt/tomcat/webapps/sonard.war
+  notify:
+          - restart tomcat
