@@ -1,6 +1,12 @@
-- name: copy the package to tomcat
-  copy:    
-      src: /home/devops/sonard.war
-      dest: /opt/tomcat/webapps/sonard.war
-  notify:
-          - restart tomcat
+- name: download artifact
+  get_url:
+     url: https://github.com/Anji399/Heloworld/raw/master/target/my-app.war
+     dest: /tmp
+- name: copy artifact
+  copy:
+     src: /tmp/my-app.war
+     dest: /opt/tomcat/webapps/my-app.war
+     owner: tomcat
+     group: tomcat
+     remote_src: yes
+ 
