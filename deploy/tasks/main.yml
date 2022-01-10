@@ -1,11 +1,11 @@
 - name: download artifact
   get_url:
-     url: https://github.com/Anji399/Heloworld/raw/master/target/my-app.war
+     url: https://github.com/Anji399/add/raw/master/target/add.war
      dest: /tmp
 - name: copy artifact
   copy:
-     src: /tmp/my-app.war
-     dest: /opt/tomcat/webapps/my-app.war
+     src: /tmp/add.war
+     dest: /opt/tomcat/webapps/add.war
      owner: tomcat
      group: tomcat
      remote_src: yes
